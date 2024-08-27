@@ -1,0 +1,15 @@
+name: wf_SecretosYVars
+
+on:
+  workflow_dispatch:
+
+jobs:
+  probando_secretos:
+    name: Verficar que se han creado los secretos
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Secreto del token 
+        run: echo ${{ secrets.SONAR_TOKEN }}
+      - name: Secreto en json
+        run: echo ${{ secrets.SECRETO_JS }}
